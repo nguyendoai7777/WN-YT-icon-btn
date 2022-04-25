@@ -1,0 +1,56 @@
+.box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.sp-ripple-effect {
+  transition: all 0.1s;
+  position: relative;
+}
+
+.effect-position {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform-origin: center center;
+  width: 100%;
+  height: 100%;
+}
+.bg-ripple-effect {
+  background-color: #0000000f;
+  border-radius: 50%;
+  transition: all 0.15s;
+}
+.bd-ripple-effect {
+  border-radius: 50%;
+  transition: all 0.15s;
+}
+.effect-down {
+  animation: bg-effect 0.1s linear forwards;
+}
+.effect-up {
+  animation: bd-effect 0.2s linear forwards;
+}
+
+@keyframes bg-effect {
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bd-effect {
+  0% {
+    border: 1px solid transparent;
+    opacity: 1;
+    transform: scale(1);
+  } 100% {
+    border: 1px solid rgb(158, 158, 158);
+    transform: scale(1.05);
+    opacity: 0;
+  }
+}
